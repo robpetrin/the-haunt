@@ -1,0 +1,110 @@
+doctype html
+html
+  head
+    title haunt | Welcome to the haunt.
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    link(rel='stylesheet', href='https://code.getmdl.io/1.3.0/material.red-yellow.min.css')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.6.1/css/all.css', integrity='sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP', crossorigin='anonymous')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='icon', type='image/png', href='favicon-32x32.png', sizes='32x32')
+    link(rel='icon', type='image/png', href='favicon-16x16.png', sizes='16x16')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(defer='', src='https://code.getmdl.io/1.3.0/material.min.js')
+  body.mdl-color--blue-grey-300
+    // Always shows a header, even in smaller screens.
+    .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+      header.mdl-layout__header.mdl-color--red
+        .mdl-layout__header-row
+          // Title
+          span.mdl-layout-title Ox Bellows (Tim)
+        .mdl-layout__header-row#stats-bar
+          span.mdl-chip.mdl-chip--contact#speed
+            span.mdl-chip__contact.mdl-color--white.mdl-color-text--red 4
+            span.mdl-chip__text Speed
+          span.mdl-chip.mdl-chip--contact#might
+            span.mdl-chip__contact.mdl-color--white.mdl-color-text--red 5
+            span.mdl-chip__text Might
+          span.mdl-chip.mdl-chip--contact#sanity
+            span.mdl-chip__contact.mdl-color--white.mdl-color-text--red 3
+            span.mdl-chip__text Sanity
+          span.mdl-chip.mdl-chip--contact#knowledge
+            span.mdl-chip__contact.mdl-color--white.mdl-color-text--red 3
+            span.mdl-chip__text Knowledge
+      .mdl-layout__drawer
+        span.mdl-layout-title Ox Bellows
+        nav.mdl-navigation
+          p 
+            img.character-image(src="https://pbs.twimg.com/profile_images/148330083/ox_400x400.jpg" alt="Image Title")
+          p Age: 20
+          p Birthday: June 6th
+          p Hobbies: Football, Shiny Objects
+          p Description: A big kid who once had to lash out. Ox is now haunted by his past and what he did that one time.
+          p Fears: The dark.
+      main.mdl-layout__content
+        .page-content
+          main.mdl-layout__content
+            section#tab1-panel.mdl-layout__tab-panel.is-active
+              .page-content
+                  block content
+            section#tab2-panel.mdl-layout__tab-panel
+              .page-content
+                // Your content goes here
+            section#tab3-panel.mdl-layout__tab-panel
+              .page-content
+                // Your content goes here
+            section#tab4-panel.mdl-layout__tab-panel
+              .page-content
+                // Your content goes here
+
+      #footer.flex-container.mdl-tabs.mdl-js-tabs.mdl-color-text--yellow-500.mdl-color--black
+        .tabs.mdl-tabs__tab-bar.mdl-color--black
+            a.mdl-tabs__tab.mdl-color-text--yellow-500(href='#tab1-panel') BM
+            a.mdl-tabs__tab.mdl-color-text--yellow-500.is-active(href='#tab2-panel') 1F
+            a.mdl-tabs__tab.mdl-color-text--yellow-500(href='#tab3-panel') 2F
+            a.mdl-tabs__tab.mdl-color-text--yellow-500(href='#tab4-panel') RF
+        // Left aligned menu on top of button
+        .menu
+          button#demo-menu-top-left.mdl-button.mdl-js-button.mdl-button--icon
+            i.material-icons more_vert
+          ul.mdl-menu.mdl-menu--top-left.mdl-js-menu.mdl-js-ripple-effect(data-mdl-for='demo-menu-top-left')
+            li.mdl-menu__item Edit Player
+            li.mdl-menu__item(disabled='') Roll Dice
+            li.mdl-menu__item Your Cards
+            li.mdl-menu__item Game Log
+            hr
+            li.mdl-menu__item Rulebook
+            li.mdl-menu__item(disabled='') Survivor's Guide
+            li.mdl-menu__item(disabled='') Traitor's Tome
+        .brand
+          | haunt
+        .info
+          i.material-icons#settings-icon info
+          
+        dialog.mdl-dialog
+          h4.mdl-dialog__title Speed
+          .mdl-dialog__content
+            .death 1
+            .step-one 0
+            .step-two 2
+            .step-three 3
+            .step-four 4
+            .step-five 5
+            .step-six 6
+            .step-seven 7
+            .step-eight 9
+
+
+          
+    script.
+      var speed = document.getElementById('speed');
+      var dialog = document.querySelector('dialog');
+      speed.addEventListener('click', function() {
+        dialog.showModal();
+      });
+      dialog.addEventListener('click', function(event) {
+        if (event.target == dialog) {
+            dialog.close();
+        }
+      });
+      

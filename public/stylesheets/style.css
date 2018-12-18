@@ -1,0 +1,115 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css?family=Unlock");
+/* Globals */
+a {
+  color: #e1cd4a;
+}
+body {
+  padding: 0;
+  font: 2em 'Roboto', serif;
+  color: #efea46;
+  margin-bottom: 2em;
+  text-align: center;
+  min-height: calc(100% - 4.5em);
+}
+pre {
+  font-size: 0.25em;
+  white-space: pre-wrap;
+}
+/* Nav Bar */
+#stats-bar {
+  padding: 0 0.25em;
+}
+.character-image {
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2em;
+}
+.mdl-chip {
+  margin: 2px;
+}
+.mdl-layout__drawer {
+  text-align: left;
+  width: 350px;
+  -webkit-transform: translateX(-350px);
+  transform: translateX(-350px);
+  padding-left: 1em;
+  background: rgba(255,255,255,0.75);
+}
+/* Dialogs */
+.mdl-dialog__content {
+  margin: auto;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 3em 3em 3em 3em;
+  grid-template-rows: 3em 3em 3em;
+  grid-template-areas: "death step-one step-two ." "step-three step-four step-five ." "step-six step-seven step-eight .";
+}
+.death {
+  grid-area: death;
+}
+.step-one {
+  grid-area: step-one;
+}
+.step-two {
+  grid-area: step-two;
+}
+.step-three {
+  grid-area: step-three;
+}
+.step-four {
+  grid-area: step-four;
+}
+.step-five {
+  grid-area: step-five;
+}
+.step-six {
+  grid-area: step-six;
+}
+.step-seven {
+  grid-area: step-seven;
+}
+.step-eight {
+  grid-area: step-eight;
+}
+/* Footer */
+#footer {
+  position: fixed;
+  padding: 0;
+  left: 0px;
+  bottom: 0px;
+  height: 4.5em;
+  width: 100%;
+  margin: auto;
+  box-shadow: 0 -5px 5px -5px #333;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 2em 2.5em;
+  grid-template-areas: "tabs tabs tabs" "menu brand info";
+  z-index: 10;
+}
+.menu {
+  grid-area: menu;
+  margin: auto;
+}
+.brand {
+  grid-area: brand;
+  font: 1.5em 'Unlock', cursive;
+  margin: auto;
+}
+.info {
+  grid-area: info;
+  margin: auto;
+}
+.tabs {
+  grid-area: tabs;
+  margin: auto;
+}
+.mdl-tabs__tab {
+  font-size: 1em;
+}
+.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after {
+  background: #e1cd4a;
+}
